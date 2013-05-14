@@ -7,9 +7,9 @@ Author: Konstantinos Kouratoras
 Donate link: 
 Tags: current, template, file, admin, toolbar
 Requires at least: 2.9.0
-Tested up to: 3.4.2
-Stable tag: 1.0
-Version: 1.0
+Tested up to: 3.5.1
+Stable tag: 1.1
+Version: 1.1
 License: GPLv2 or later
 
 Displays the current template file in WordPress admin toolbar
@@ -34,6 +34,9 @@ It appears in the admin toolbar, if it is enabled.
 1. Current template file in admin toolbar
 
 == Changelog ==
+
+= 1.1 = 
+* Update
 
 = 1.0 = 
 * Initial Release

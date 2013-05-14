@@ -4,7 +4,7 @@
   Plugin Name: Current Template File
   Plugin URI: http://wordpress.org/extend/plugins/current-template-file
   Description: Displays the current template file in WordPress admin toolbar
-  Version: 1.0
+  Version: 1.1
   Author: Konstantinos Kouratoras
   Author URI: http://www.kouratoras.gr
   Author Email: kouratoras@gmail.com
@@ -43,10 +43,14 @@ class CurrentTemplateFile {
 	function admin_tooolbar_add_item() {
 
 		global $wp_admin_bar;
+		global $template;
+		
+		echo $template;
 		
 		$wp_admin_bar->add_menu(array(
 			    'id' => 'current_template_file',
-			    'title' => "Current file: " . basename(get_page_template()),
+			    'title' => "Current file: /" . substr( $template, ( strpos( $template, 'wp-content') ) ),
+			    //'title' => $template,
 			    'href' => false,
 			    "parent" => false,
 			    "meta" => false
