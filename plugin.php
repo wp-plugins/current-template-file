@@ -4,7 +4,7 @@
   Plugin Name: Current Template File
   Plugin URI: http://wordpress.org/extend/plugins/current-template-file
   Description: Displays the current template file in WordPress admin toolbar
-  Version: 1.1.1
+  Version: 1.2
   Author: Konstantinos Kouratoras
   Author URI: http://www.kouratoras.gr
   Author Email: kouratoras@gmail.com
@@ -29,34 +29,43 @@
 class CurrentTemplateFile {
 
 	public function __construct() {
+		
+		//Load localisation files
+		add_action( 'init', array(&$this, 'plugin_textdomain'));
+		
+		//Print file
+		add_action('admin_bar_init', array(&$this, 'ctf_toolbar_init'));
+	}
+	
+	function plugin_textdomain() {
 
-		add_action('admin_bar_init', array(&$this, 'admin_toolbar_init'));
+		load_plugin_textdomain(
+			'current-template-file',
+			false,
+			dirname( plugin_basename( __FILE__ ) ) . '/languages'
+			);
 	}
 
-	function admin_toolbar_init() {
+	function ctf_toolbar_init() {
 
 		if (!is_admin() && is_super_admin() && is_admin_bar_showing()) {
-			add_action('admin_bar_menu', array(&$this, 'admin_tooolbar_add_item'), 100);
+			add_action('admin_bar_menu', array(&$this, 'ctf_tooolbar_add_item'), 100);
 		}
 	}
-
-	function admin_tooolbar_add_item() {
+	
+	function ctf_tooolbar_add_item() {
 
 		global $wp_admin_bar;
 		global $template;
 		
-		echo $template;
-		
 		$wp_admin_bar->add_menu(array(
 			    'id' => 'current_template_file',
-			    'title' => "Current file: /" . substr( $template, ( strpos( $template, 'wp-content') ) ),
-			    //'title' => $template,
+			    'title' => __('Current file:', 'current-template-file') . " " . substr( $template, ( strpos( $template, 'wp-content') ) ),
 			    'href' => false,
 			    "parent" => false,
 			    "meta" => false
 		));
 	}
-
 }
 
 new CurrentTemplateFile();
