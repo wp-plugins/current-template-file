@@ -6,7 +6,7 @@ Author URI: http://www.kouratoras.gr
 Author: Konstantinos Kouratoras
 Donate link: 
 Tags: current, template, file, admin, toolbar
-Requires at least: 2.9.0
+Requires at least: 3.2
 Tested up to: 3.9.1
 Stable tag: 1.2
 Version: 1.2
