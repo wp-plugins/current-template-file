@@ -8,15 +8,19 @@ Donate link:
 Tags: current, template, file, admin, toolbar
 Requires at least: 3.2
 Tested up to: 4.1.1
-Stable tag: 1.2.1
-Version: 1.2.1
+Stable tag: 1.3
+Version: 1.3
 License: GPLv2 or later
 
-Displays the current template file in WordPress admin toolbar
+Displays the current template file (and template parts if any) in WordPress admin toolbar
 
 == Description ==
 
-Displays the current template file in WordPress admin toolbar
+Displays the current template file (and template parts if any) in WordPress admin toolbar
+
+= Translations included =
+* German
+* Greek
 
 == Installation ==
 
@@ -31,9 +35,14 @@ It appears in the admin toolbar, if it is enabled.
 
 == Screenshots ==
 
-1. Current template file in admin toolbar
+1. Template file
+1. Template parts
 
 == Changelog ==
+
+= 1.3 =
+* Added support for template parts
+* Added Greek, German translations
 
 = 1.2.1 =
 * Images update
