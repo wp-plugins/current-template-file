@@ -34,13 +34,13 @@ class CurrentTemplateFile {
 		
 		load_plugin_textdomain('current-template-file',false,dirname( plugin_basename( __FILE__ ) ) . '/languages');
 		add_action( 'all', array( $this, 'ctf_template_parts' ), 1, 3 );
-		add_action('admin_bar_init', array(&$this, 'ctf_admib_bar_init'));
+		add_action('admin_bar_init', array(&$this, 'ctf_admin_bar_init'));
 	}
 
-	function ctf_admib_bar_init() {
+	function ctf_admin_bar_init() {
 
 		if (current_user_can( 'manage_options' ) && !is_admin() && is_admin_bar_showing()) {
-			add_action('admin_bar_menu', array(&$this, 'ctf_admib_bar_item_add'), 100);
+			add_action('admin_bar_menu', array(&$this, 'ctf_admin_bar_item_add'), 100);
 		}
 	}
 	
@@ -64,7 +64,7 @@ class CurrentTemplateFile {
 		}
 	}
 	
-	function ctf_admib_bar_item_add() {
+	function ctf_admin_bar_item_add() {
 
 		global $wp_admin_bar;
 		global $template;
