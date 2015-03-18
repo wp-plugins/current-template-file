@@ -43,6 +43,7 @@ It appears in the admin toolbar, if it is enabled.
 = 1.3 =
 * Added support for template parts
 * Added Greek, German translations
+* Added Portuguese (Brazil) translation by [BSConsult](http://bsconsult.com.br/) team
 
 = 1.2.1 =
 * Images update
