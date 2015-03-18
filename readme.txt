@@ -21,6 +21,7 @@ Displays the current template file (and template parts if any) in WordPress admi
 = Translations included =
 * German
 * Greek
+* Portuguese (Brazil)
 
 == Installation ==
 
